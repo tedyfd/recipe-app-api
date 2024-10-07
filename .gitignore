@@ -1,2 +1,2 @@
-app/app/__pycache__/*
 *.pyc
+/app/app/__pycache__/*
