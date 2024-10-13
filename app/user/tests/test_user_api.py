@@ -58,7 +58,7 @@ class PublicUserApiTests(TestCase):
         self.assertFalse(user_exists)
 
     def test_create_token_for_user(self):
-        user_details ={
+        user_details = {
             'name': 'test',
             'email': 'admin@example.com',
             'password': 'testpass123',
@@ -115,7 +115,7 @@ class PrivateUserApiTest(TestCase):
             'name': self.user.name,
             'email': self.user.email,
         })
-    
+
     def test_post_me_not_allowed(self):
         res = self.client.post(ME_URL, {})
 
@@ -130,4 +130,3 @@ class PrivateUserApiTest(TestCase):
         self.assertEqual(self.user.name, payload['name'])
         self.assertTrue(self.user.check_password(payload['password']))
         self.assertEqual(res.status_code, status.HTTP_200_OK)
-        
